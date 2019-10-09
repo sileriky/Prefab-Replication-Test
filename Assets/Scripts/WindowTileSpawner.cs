@@ -17,12 +17,8 @@ public class WindowTileSpawner : MonoBehaviour {
         float selfX = transform.position.x;
         float selfY = transform.position.y;
 
-        //Setup initial tile
-        Vector3 initPos = transform.position;
-        GameObject newWindow = Instantiate(WindowTilePrefab, initPos, Quaternion.identity);
-
         //Get dimensions of prefab tile
-        Vector3 prefabDims = newWindow.GetComponent<Renderer>().bounds.size;
+        Vector3 prefabDims = WindowTilePrefab.GetComponent<Renderer>().bounds.size;
 
         for (int curStep = 1; curStep <= staircaseHeight; curStep++) {
             for (int curStepTile = 0; curStepTile < curStep; curStepTile++) {
